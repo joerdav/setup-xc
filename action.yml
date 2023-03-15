@@ -1,0 +1,16 @@
+name: Setup xc
+description: Setup a the xc cli and add it to the PATH.
+inputs:
+  version:
+    description: The xc version to setup. Must be a valid semantic version string like "v0.4.0" or "latest"
+    required: true
+    default: latest
+outputs:
+  xc-path:
+    description: Path to the cached xc binary
+branding:
+  icon: terminal
+  color: black
+runs:
+  using: node16
+  main: dist/index.js
