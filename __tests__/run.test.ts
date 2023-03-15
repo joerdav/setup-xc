@@ -50,7 +50,7 @@ describe('Testing all functions in run file.', () => {
         ['amd64']
     ])('getXCDownloadURL() must return the URL to download %s xc for Linux based systems', (arch) => {
         jest.spyOn(os, 'type').mockReturnValue('Linux');
-        const xcLinuxUrl = util.format('https://github.com/joerdav/xc/releases/download/v0.4.0/xc_v0.4.0_linux_%s.tar.gz', arch);
+        const xcLinuxUrl = util.format('https://github.com/joerdav/xc/releases/download/v0.4.0/xc_0.4.0_linux_%s.tar.gz', arch);
 
         expect(run.getXCDownloadURL('v0.4.0', arch)).toBe(xcLinuxUrl);
         expect(os.type).toBeCalled();
@@ -61,7 +61,7 @@ describe('Testing all functions in run file.', () => {
         ['amd64']
     ])('getXCDownloadURL() must return the URL to download %s xc for MacOS based systems', (arch) => {
         jest.spyOn(os, 'type').mockReturnValue('Darwin');
-        const xcDarwinUrl = util.format('https://github.com/joerdav/xc/releases/download/v0.4.0/xc_v0.4.0_darwin_%s.tar.gz', arch);
+        const xcDarwinUrl = util.format('https://github.com/joerdav/xc/releases/download/v0.4.0/xc_0.4.0_darwin_%s.tar.gz', arch);
 
         expect(run.getXCDownloadURL('v0.4.0', arch)).toBe(xcDarwinUrl);
         expect(os.type).toBeCalled();
@@ -71,7 +71,7 @@ describe('Testing all functions in run file.', () => {
         ['amd64']
     ])('getXCDownloadURL() must return the URL to download %s xc for Windows based systems', (arch) => {
         jest.spyOn(os, 'type').mockReturnValue('Windows_NT');
-        const xcWindowsUrl = util.format('https://github.com/joerdav/xc/releases/download/v0.4.0/xc_v0.4.0_windows_%s.zip', arch);
+        const xcWindowsUrl = util.format('https://github.com/joerdav/xc/releases/download/v0.4.0/xc_0.4.0_windows_%s.zip', arch);
 
         expect(run.getXCDownloadURL('v0.4.0', arch)).toBe(xcWindowsUrl);
         expect(os.type).toBeCalled();
