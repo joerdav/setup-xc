@@ -7235,14 +7235,15 @@ function getLatestXCVersion() {
 }
 exports.getLatestXCVersion = getLatestXCVersion;
 function getXCDownloadURL(version, arch) {
+    const versionString = semver.clean(version);
     switch (os.type()) {
         case 'Linux':
-            return util.format('https://github.com/joerdav/xc/releases/download/%s/xc_%s_linux_%s.tar.gz', version, version, arch);
+            return util.format('https://github.com/joerdav/xc/releases/download/%s/xc_%s_linux_%s.tar.gz', version, versionString, arch);
         case 'Darwin':
-            return util.format('https://github.com/joerdav/xc/releases/download/%s/xc_%s_darwin_%s.tar.gz', version, version, arch);
+            return util.format('https://github.com/joerdav/xc/releases/download/%s/xc_%s_darwin_%s.tar.gz', version, versionString, arch);
         case 'Windows_NT':
         default:
-            return util.format('https://github.com/joerdav/xc/releases/download/%s/xc_%s_windows_%s.zip', version, version, arch);
+            return util.format('https://github.com/joerdav/xc/releases/download/%s/xc_%s_windows_%s.zip', version, versionString, arch);
     }
 }
 exports.getXCDownloadURL = getXCDownloadURL;
