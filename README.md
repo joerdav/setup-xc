@@ -24,7 +24,7 @@ can be executed directly in later workflow steps. It is also stored in the
 
 ## Tasks
 
-## test
+### test
 
 Run the tests
 
@@ -33,7 +33,7 @@ requires: install
 ```
 npm run test
 ```
-## install
+### install
 
 Install dependencies
 
