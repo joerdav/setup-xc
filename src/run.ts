@@ -84,7 +84,7 @@ export async function downloadXC(version: string): Promise<string> {
             }
         } catch (exception) {
             if (exception instanceof toolCache.HTTPError && exception.httpStatusCode === 404) {
-                throw new Error(util.format("xc '%s' for '%s' arch not found.", version, arch));
+                throw new Error(util.format("xc '%s' for '%s' arch not found at '%s'.", version, arch, xcDownloadPath));
             } else {
                 throw new Error('DownloadXCFailed');
             }
