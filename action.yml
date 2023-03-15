@@ -3,7 +3,7 @@ description: Setup a the xc cli and add it to the PATH.
 inputs:
   version:
     description: The xc version to setup. Must be a valid semantic version string like "v0.4.0" or "latest"
-    required: true
+    required: false
     default: latest
 outputs:
   xc-path:
